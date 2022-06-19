@@ -18,6 +18,15 @@ A compact e-book reader.
 
 Total: € 15.30 (excluding shipping)
 
+# Raspberry Pi Zero W Boot Config
+
+Don't forget to add this line to the `/boot/config.txt` file:
+
+```
+# Enable second i2c port
+dtoverlay=i2c-gpio,bus=4,i2c_gpio_delay_us=1,i2c_gpio_sda=23,i2c_gpio_scl=24
+```
+
 ## Wiring
 
 ![pihon Wiring](https://raw.githubusercontent.com/make-42/pTuna/master/Schematic/Wiring.png)
