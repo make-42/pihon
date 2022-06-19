@@ -1,9 +1,6 @@
 # pihon
 
-<video width="320" height="240" autoplay loop muted>
-  <source src="https://raw.githubusercontent.com/make-42/pihon/master/Blender/outputLooping.mp4" type="video/webm" />
-  Your browser does not support the video tag.
-</video>
+![pihon](https://raw.githubusercontent.com/make-42/pihon/master/Blender/output.gif)
 
 A compact e-book reader.
 
