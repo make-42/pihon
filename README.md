@@ -1,7 +1,7 @@
 # pihon
 
 <video width="320" height="240" autoplay loop muted>
-  <source src="https://raw.githubusercontent.com/make-42/pihon/master/Blender/outputLooping.webm" type="video/webm" />
+  <source src="https://raw.githubusercontent.com/make-42/pihon/master/Blender/outputLooping.mp4" type="video/webm" />
   Your browser does not support the video tag.
 </video>
 
