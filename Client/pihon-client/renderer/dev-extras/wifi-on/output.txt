@@ -1,0 +1,12 @@
+DrawHorizontalLine(239, 1, 8, 1)
+DrawHorizontalLine(238, 2, 1, 1)
+DrawHorizontalLine(247, 2, 1, 1)
+DrawHorizontalLine(240, 3, 6, 1)
+DrawHorizontalLine(239, 4, 1, 1)
+DrawHorizontalLine(246, 4, 1, 1)
+DrawHorizontalLine(241, 5, 4, 1)
+DrawHorizontalLine(240, 6, 1, 1)
+DrawHorizontalLine(245, 6, 1, 1)
+DrawHorizontalLine(242, 7, 2, 1)
+DrawHorizontalLine(242, 8, 2, 1)
+

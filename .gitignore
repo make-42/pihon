@@ -1,0 +1,4 @@
+Client/pihon-client/library/*
+Client/python-pihon-converter/input/*
+Client/python-pihon-converter/output/*
+Client/ui-dev (deprecated)/library/*

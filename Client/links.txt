@@ -1,0 +1,2 @@
+https://crates.io/crates/ssd1306
+https://github.com/rust-embedded/awesome-embedded-rust#other
