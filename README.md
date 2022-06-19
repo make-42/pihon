@@ -1,13 +1,13 @@
 # pihon
 
-![pihon](https://raw.githubusercontent.com/make-42/pTuna/master/Blender/untitled.png)
+![pihon](https://raw.githubusercontent.com/make-42/pihon/master/Blender/untitled.png)
 
 A compact e-book reader.
 
 ## Freestyle renders
 
-![pihon freestyle render 1](https://raw.githubusercontent.com/make-42/pTuna/master/Blender/freestyle.png)
-![pihon freestyle render 2](https://raw.githubusercontent.com/make-42/pTuna/master/Blender/freestyle2.png)
+![pihon freestyle render 1](https://raw.githubusercontent.com/make-42/pihon/master/Blender/freestyle.png)
+![pihon freestyle render 2](https://raw.githubusercontent.com/make-42/pihon/master/Blender/freestyle2.png)
 
 ## BOM (Prices in France as of June 2022)
 
@@ -29,8 +29,8 @@ dtoverlay=i2c-gpio,bus=4,i2c_gpio_delay_us=1,i2c_gpio_sda=23,i2c_gpio_scl=24
 
 ## Wiring
 
-![pihon Wiring](https://raw.githubusercontent.com/make-42/pTuna/master/Schematic/Wiring.png)
+![pihon Wiring](https://raw.githubusercontent.com/make-42/pihon/master/Schematic/Wiring.png)
 
 ## Schematic
 
-![pihon Schematic](https://raw.githubusercontent.com/make-42/pTuna/master/Schematic/Schematic.png)
+![pihon Schematic](https://raw.githubusercontent.com/make-42/pihon/master/Schematic/Schematic.png)
