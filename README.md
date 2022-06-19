@@ -1,6 +1,6 @@
 # pihon
 
-![pihon](https://raw.githubusercontent.com/make-42/pihon/master/Blender/untitled.png)
+![pihon](https://raw.githubusercontent.com/make-42/pihon/master/Blender/output.gif)
 
 A compact e-book reader.
 
