@@ -9,6 +9,7 @@ import (
 	"tokei.pi/extras"
 	"tokei.pi/renderer"
 	"tokei.pi/screendriver"
+	"tokei.pi/screenfader"
 	"tokei.pi/ui"
 	"tokei.pi/weather"
 
@@ -71,6 +72,7 @@ func leftEventHandler(evt gpiod.LineEvent) {
 				return
 			}*/
 		fmt.Println("Left button pressed!")
+		screenfader.ClickRegistered()
 		ui.UIDisplayedMenu--
 		if ui.UIDisplayedMenu < 1 {
 			ui.UIDisplayedMenu = ui.UIWidgetCount
@@ -93,6 +95,7 @@ func rightEventHandler(evt gpiod.LineEvent) {
 				return
 			}*/
 		fmt.Println("Right button pressed!")
+		screenfader.ClickRegistered()
 		ui.UIDisplayedMenu++
 		if ui.UIDisplayedMenu > ui.UIWidgetCount {
 			ui.UIDisplayedMenu = 1
@@ -110,10 +113,24 @@ func UIMainloop() {
 	}
 }
 
-func UIWeatherMainLoop() {
+func UIWeatherMainloop() {
 	for true {
 		weather.UpdateCurrentWeather()
 		time.Sleep(240 * time.Second)
+	}
+}
+
+func ScreenFaderMainloop() {
+	for true {
+		screenfader.AdaptDisplayBrightness()
+		timeSinceLastClick := int(time.Now().UnixMilli() - screenfader.LastClickTimestamp)
+		if timeSinceLastClick < screenfader.ScreenFadeDelay*1000 {
+			time.Sleep(100 * time.Millisecond)
+		} else if timeSinceLastClick < screenfader.ScreenFadeDelay*1000+screenfader.ScreenFadeDuration*1000 {
+			time.Sleep(17 * time.Millisecond)
+		} else {
+			time.Sleep(1000 * time.Millisecond)
+		}
 	}
 }
 
@@ -141,10 +158,10 @@ func main() {
 	// Extras
 	extras.CloudflareIP = "1.1.1.1"
 	// Weather
-	weather.OpenWeatherMapAPIKey = "REPLACE WITH YOUR OWN KEY"
+	weather.OpenWeatherMapAPIKey = "2ee79601c807b825fa622addcb4d9b57"
 	weather.CityOfObservation = "Paris, FR"
-	weather.Latitude = 48.83
-	weather.Longitude = 2.39
+	weather.Latitude = 48.834590
+	weather.Longitude = 2.398260
 	// Code
 	// GPIO init
 	l, err := gpiod.RequestLine("gpiochip0", leftButtonPinRef, gpiod.WithPullUp, gpiod.WithBothEdges, gpiod.WithEventHandler(leftEventHandler), gpiod.WithDebounce(debouncingPeriod))
@@ -162,7 +179,8 @@ func main() {
 	ui.RenderUI()
 	ui.UIConnectedToInternet = extras.PingCloudflare()
 	go UIMainloop()
-	go UIWeatherMainLoop()
+	go UIWeatherMainloop()
+	go ScreenFaderMainloop()
 	// Ping every 60s
 	for true {
 		time.Sleep(time.Minute)

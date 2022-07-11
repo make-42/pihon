@@ -13,6 +13,7 @@ import (
 
 var DisplaysList []*ssd1306.Dev
 var I2CBuses []string
+var CurrentScreenBrightness = 255
 
 func checkError(error error) {
 	if error != nil {
@@ -38,5 +39,14 @@ func InitializeDisplays() {
 func UpdateDisplays() {
 	for i := 0; i < renderer.ScreenCount; i++ {
 		go DisplaysList[i].Draw(renderer.FrameBuffers[i].Bounds(), renderer.FrameBuffers[i], image.Point{})
+	}
+}
+
+func SetBrightness(brightness int) { // 0 to 255
+	if CurrentScreenBrightness != brightness {
+		CurrentScreenBrightness = brightness
+		for i := 0; i < renderer.ScreenCount; i++ {
+			go DisplaysList[i].SetContrast(byte(brightness))
+		}
 	}
 }

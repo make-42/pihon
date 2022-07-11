@@ -3,6 +3,7 @@ module tokei.pi
 go 1.14
 
 require (
+	github.com/fogleman/ease v0.0.0-20170301025033-8da417bf1776
 	github.com/go-ping/ping v1.0.0
 	github.com/pbnjay/pixfont v0.0.0-20200714042608-33b744692567
 	github.com/warthog618/gpiod v0.8.0
