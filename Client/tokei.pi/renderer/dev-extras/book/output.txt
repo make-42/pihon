@@ -1,0 +1,9 @@
+DrawHorizontalLine(FrameBuffers[1], 125, 1, 1, 1)
+DrawHorizontalLine(FrameBuffers[1], 124, 2, 1, 1)
+DrawHorizontalLine(FrameBuffers[1], 123, 3, 2, 1)
+DrawHorizontalLine(FrameBuffers[1], 122, 4, 5, 1)
+DrawHorizontalLine(FrameBuffers[1], 121, 5, 5, 1)
+DrawHorizontalLine(FrameBuffers[1], 123, 6, 2, 1)
+DrawHorizontalLine(FrameBuffers[1], 123, 7, 1, 1)
+DrawHorizontalLine(FrameBuffers[1], 122, 8, 1, 1)
+
